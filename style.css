@@ -1,89 +1,220 @@
-header {
-  height:400px;
-  width:100%;
-  margin: 0 20px;
-  font-family: 'Abril Fatface', cursive;
-  color:#222;
-  background: no-repeat left/cover url("https://raw.githubusercontent.com/green-fox-academy/myfirstapp-syllabus/master/assets/first-website-header.png");
-  position:relative;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
 }
-header div {
-  position:absolute;
-  top:60%;
-  left:280px;
-  
+a:link, a:visited, a:hover, a:active {
+    color:#fafafa;
 }
 
-div h2 {
-  font-size:35px;
-  margin:0;
-  padding:0;
-  
+.displayFlexColum {
+    display: flex;
+    flex-direction: column;
+}
+.displayFlexRow {
+    display: flex;
+    flex-direction: row;
 }
 
-div h1 {
-  font-size:70px;
-  margin:0;
-  padding-top:0;
+.displayFlexCenter {
+    align-items: center;
+}
+.displayFlexSpaceBetween {
+    justify-content: space-between;
+}
+.displayFlexSpaceEvenly {
+    justify-content: space-evenly;
+}
+.displayFlexAlignCenter {
+    align-items: center;
+}
+.displayFlexJustCenter {
+    justify-content: center;
+}
+.textcenter {
+    text-align: center;
+}
+.displayFlexStart {
+    justify-content: flex-start;
 }
 
-main {
-    width: 1000px;
-    margin: 50px 20px 20px 20px;
-  position: relative;
-      font-family: 'Josefin Sans', sans-serif;
-  text-align: left;
-  font-size:20px;
-  
+.textPaddingRight {
+    padding-right: 5vw;
+}
+#container {
+    width: 100vw;
+    background-color: #fafafa;
 }
 
-main div  {
-  position:absolute;
-  top:60%;
-  left:280px;
-  
-}
-    
-
-main div blockquote {
-  margin:0;
-  padding:0;
+#header {
+    justify-content: space-between;
+    background-color: #fafafa;
+    font-size: 2.2rem;
 }
 
-footer {
-  border-top: 4px solid black;
+.headerBox {
+    margin: 4vh 4vw;
 }
 
-.quote {
-    height:120px;
-    padding:10px;
-        font-family: 'Merriweather', serif;
-  color: white;
-  background-color:grey;
+#main {
+    height: 150vh;
+    background-image: url(/assets/headerpic.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 150vh;
+    background-position: center; 
+}
+.mainMarginLeft {
+    margin-left: 7vw;
 }
 
-.quote::before {
-      content: '”';
-      font-family: 'Merriweather', serif;
-  color: white;
-  background-color:grey;
-  font-size:70px;
+#text {
+    margin-top: 25vh;
+    color: #fafafa;
 }
-h3 {
-  margin:40px 0;
-  font-family: 'Josefin Sans', sans-serif;
+.text {
+    color: #fafafa;
+    margin-top: 5vh;
 }
-li {
-  font-size:15px;
+#text h1 {
+    font-family:'Montserrat', sans-serif;
+    font-size: 4rem;
 }
 
-.inscriptions {
-  font-family: 'Merriweather', serif;
-  font-size:15px;
+.boxesDiv {
+    width: 18vw;
+    height: 39vh;
+    margin: 0 1vw;
 }
-
-.textUpper {
-    font-weight: bolder;
+.boxesParag {
+    margin-top: 2vh;
     text-transform: uppercase;
-  
+    font-weight: lighter;
+}
+.boxesParagText {
+    margin-top: 2vh;
+    font-size: 0.8rem;
+}
+.divPadding {
+    padding: 1vh 2vw;
+}
+
+#boxes {
+    margin-top: 19vh;
+    color: #fafafa;
+    font-size: 1rem;
+    margin-left: 6.4vw;
+}
+#boxes img {
+    margin: 1vh 0;
+    width: 4vw;
+    height: 10vh;
+}
+
+#aboutUs {
+    background-color: #ec6011;
+}
+
+#company {
+    background-color: #92c705;
+}
+
+#ourMission {
+    background-color: #573aba;
+}
+#other {
+    background-color: #2cccc4;
+}
+
+#services {
+    padding: 10vh 10vw 15vh 10vw;
+}
+#services h2 {
+    font-size: 2.3rem;
+    padding: 5vh 0;
+}
+
+#myCompany {
+    height: 150vh;
+    background-image: url(/assets/mycompany.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 150vh;
+    background-position: center; 
+    color: #fafafa;
+    font-size: 1.2rem;
+}
+
+#myCompany h3 {
+    padding: 15vh 0;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    
+}
+
+#theseAreWe {
+    margin-top: 21vh;
+    margin-bottom: 10vh;
+}
+.weAreImg {
+    height: 36vh;
+    
+}
+
+.name {
+    margin: 3vh 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.title {
+    color: #92c705;
+    margin-bottom: 2vh;
+}
+
+.myText {
+    margin-bottom: 2vh;
+}
+
+.socialmImg {
+    width: 2vw;
+    height: 2vh;
+    margin: 1vh 1.3vw;
+}
+
+#contact {
+    margin-top: 10vh;
+    padding-bottom: 10vh;
+    background-color: #2b2933;
+    color: #fafafa;
+}
+.contactMarginTop {
+    margin-top: 3vh;
+}
+
+#contact h3 {
+    margin-top: 10vh;
+    margin-bottom: 6vh;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.contactSpanMargin {
+    margin-left: 20px;
+}
+.footerImg {
+    width: 22px;
+    height: 19px;
+    border-radius: 12%;
+}
+#footer {
+    height: 10vh;
+    padding-top: 5vh;
+    color: #fafafa;
+    background-color: #333333;
+}
+.footerFontSize {
+    font-size: 0.8rem;
 }
