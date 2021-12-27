@@ -1,113 +1,151 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Első weboldalam</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@300&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet"> <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Projrct ötletek</title>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<header>
-  <div>
-    <h2>Hi, my name is</h2>
-  <h1>Anakin Skywalker</h1>
+    <div id="container" class="displayFlexColum">
+        <div id="header" class="displayFlexRow">
+            <!-- Ide egy rendes logó kell! -->
+            <div id="logo" class="headerBox">logo</div>
+            <div id="menu" class="headerBox">Home</div>
+        </div>
+        <div id="main">
+            <div id="text" class="mainMarginLeft">
+                <h1>Ötletek.</h1>
+                <h1>Célok.</h1>
+                <h1>Megvalósítások.</h1>
+            </div>
+            <div id="boxes" class="displayFlexRow displayFlexStart">
+              <div id="aboutUs" class="boxesDiv textcenter displayFlexColum displayFlexCenter displayFlexAlignCenter divPadding">
+                  <img src="/assets/group.png" alt="">
+                  <p class="boxesParag">Ezek vagyunk mi</p>
+                  <p class="boxesParagText">Röviden kik vagyunk</p>
+              </div>
+              <div id="company" class="boxesDiv textcenter displayFlexColum displayFlexCenter displayFlexAlignCenter divPadding">
+                  <img src="/assets/office.png" alt="" >
+                  <p class="boxesParag">A Cég</p>
+                  <p class="boxesParagText">Röviden a cégünkről</p>
+              </div>
+              <div id="ourMission" class="boxesDiv textcenter displayFlexColum displayFlexCenter displayFlexAlignCenter divPadding">
+                  <img src="/assets/mission.png" alt="">
+                  <p class="boxesParag">Céljaink</p>
+                  <p class="boxesParagText">Röviden a céljainkról</p>
+              </div>
+              <div id="other" class="boxesDiv textcenter displayFlexColum displayFlexCenter displayFlexAlignCenter divPadding" >
+                  <img src="/assets/other.png" alt="">
+                  <p class="boxesParag">Egyéb</p>
+                  <p class="boxesParagText">Röviden egyéb dolgokról</p>
+              </div> 
+            </div>
+            <p class="text mainMarginLeft">Image from <a href="https://freepik.com/">Freepik</a></p>
+        </div>
+        <div id="services" class="displayFlexColum displayFlexAlignCenter textcenter">
+            <h2>Ide egy konkrét rövid összefoglaló kell. Pl: Így segítjük a céljai megvalósításában  </h2>
+            <p>Célkitűzésünk, hogy olyan minőségi, átfogó szolgáltatást biztosítsunk befektetőinknek,
+             amely tartós hosszú távú együttműködéshez vezet. Ön mindig bizalommal fordulhat hozzánk.</p>
+                <div id="forPerson"></div>
+                <div id="forCompany"></div>
+        </div>
+        <div id="myCompany" class="textcenter">
+            <div id="myCompanyAboutUs" class="textPaddingRight">
+                <h3>Miért válassz minket?</h3>
+                <p>Szakmai és pénzügyi befektetők részére kinálunk ingatlanokat,dolgozunk ki 
+                és menedzselünk projekteket,franchise rendszereket</p>
+            </div>
+        </div>
+        <div id="theseAreWe" class="displayFlexRow displayFlexSpaceEvenly">
+            <div id="CEO" class="displayFlexColum">
+                <img class="weAreImg" src="https://randomuser.me/api/portraits/women/17.jpg" alt="">
+                <p class="name textcenter">Aubrey Baker</p>
+                <p class="title textcenter">ceo</p>
+                <p class="myText textcenter">pár szó magamról</p>
+                <div id="socialMedia" class="displayFlexRow displayFlexSpaceEvenly">
+                    <div id="FbIcon">
+                        <a href=""><img class="socialmImg" src="/assets/facebook.png" alt=""></a>
+                     </div>
+                     <div id="instaIcon">
+                         <a href=""><img class="socialmImg" src="/assets/instagram.png" alt=""></a>
+                     </div>
+                     <div id="youtubeIcon">
+                         <a href=""><img class="socialmImg" src="/assets/youtube.png" alt=""></a>
+                     </div>
+                </div>
+            </div>
+            <div id="secretary" class="displayFlexColum">
+                <img class="weAreImg" src="https://randomuser.me/api/portraits/men/71.jpg" alt="">
+                <p class="name textcenter">Kent Dean</p>
+                <p class="title textcenter">secretary</p>
+                <p class="myText textcenter">pár szó magamról</p>
+                <div id="socialMedia" class="displayFlexRow displayFlexSpaceEvenly">
+                    <div id="FbIcon">
+                        <a href=""><img class="socialmImg" src="/assets/facebook.png" alt=""></a>
+                     </div>
+                     <div id="instaIcon">
+                         <a href=""><img class="socialmImg" src="/assets/instagram.png" alt=""></a>
+                     </div>
+                     <div id="youtubeIcon">
+                         <a href=""><img class="socialmImg" src="/assets/youtube.png" alt=""></a>
+                     </div>
+                </div>
+            </div>
+            <div id="Salesboss" class="displayFlexColum">
+                <img class="weAreImg" src="https://randomuser.me/api/portraits/women/74.jpg" alt="">
+                <p class="name textcenter">Sophia Hamilton</p>
+                <p class="title textcenter">Salesboss</p>
+                <p class="myText textcenter">pár szó magamról</p>
+                <div id="socialMedia" class="displayFlexRow displayFlexSpaceEvenly">
+                    <div id="FbIcon">
+                        <a href=""><img class="socialmImg" src="/assets/facebook.png" alt=""></a>
+                     </div>
+                     <div id="instaIcon">
+                         <a href=""><img class="socialmImg" src="/assets/instagram.png" alt=""></a>
+                     </div>
+                     <div id="youtubeIcon">
+                         <a href=""><img class="socialmImg" src="/assets/youtube.png" alt=""></a>
+                     </div>
+                </div>
+            </div>
+                    
+        </div>
+        <div id="contact" class="displayFlexColum textcenter">
+            <h3>Elérhetőségeink</h3>
+            <div id="mail" class="displayFlexRow displayFlexAlignCenter displayFlexStart contactMarginTop">
+                <i class="material-icons">contact_mail</i>
+                <span class="contactSpanMargin">1047 Budapest,Váci út 57.</span>
+            </div>
+            <div id="phone" class="displayFlexRow displayFlexAlignCenter displayFlexStart contactMarginTop">
+                <i class="material-icons">contact_phonel</i>
+                <span >+36 30 9315 388</span>
+
+            </div>
+            <div id="email" class="displayFlexRow displayFlexAlignCenter displayFlexStart contactMarginTop" >
+                <i class="material-icons">email</i>
+                <span class="contactSpanMargin"><a href="mailto:projektotletek111@gmail.com">projektotletek111@gmail.com</a></span>
+                
+            </div>
+            <div id="contactFB" class="displayFlexRow displayFlexAlignCenter displayFlexStart contactMarginTop">
+                <img class="footerImg" src="/assets/5282541_fb_social media_facebook_facebook logo_social network_icon.svg" alt="">
+                <span class="contactSpanMargin"><a href="">Facebook Page</a> </span>
+            </div>
+        </div>
+        <div id="footer" class="displayFlexRow displayFlexSpaceEvenly">
+            <h4 class="footerFontSize">Image from <a class="footerFontSize"  href="https://freepik.com/">Freepik</a></h4>
+            <span class="footerFontSize">Created by: <a class="footerFontSize" href="https://www.facebook.com/profile.php?id=100008429973897">NyitiG</a></span>
+        </div>
     </div>
- </header>
-<main>
-  <div> 
-    <blockquote><b>Analytical, goal oriented leader</b> with proven track record in management and
-enforcement Space Fleet Operations or Frontend Development. Wide range of
-hands-on experience, including:</blockquote>
-    <ul>
-      <li>Large scale construction projects oversight</li>
-      <li>Advanced forms of mind control</li>
-      <li>Planetary scale demolitions operations</li>
-      <li>Fugitive recovery services</li>
-      
-    </ul>
-    <blockquote >
-      <h2 class="quote"> <b>Together we can rule the galaxy</b> 
-</h2>
-    </blockquote>
-    <blockquote class="secund">
-      <h3 class="textUpper"> Notable achievements </h3>
-    <h4>Designed, built and piloted a custom pod racer. 32 BBY Boonta Eve Classic Race Champion</h4>
-    <h6>In my spare time at Waldâ€™s Parts junk shop I designed and built a Class III open
-cockpit Podracer capable of 588 mph top speed. Went on to win the Boonta Eve
-Classic race in 32 BBY - first ever win by a human. Generated documented company
-revenue of over 59 wupiupi during the course of my enslavement.</h6>
-    <h3>Oversight of DS1 and DS2 Orbital Battle Stations construction projects
-</h3>
-    <h6>During my tenure as a Supreme Imperial Fleet Commander I was in charge of large
-capital construction projects for the Deep Space Fleet. Performed acceptance
-testing of the DS1 SuperLaser in 0 BBY by annihilating Alderaan - a terrestrial
-class planet in the Core Worlds region. Successfully tripled the deep space fire
-power of the imperial fleet in accordance with the Tarkin Doctrine before losing
-both projects to run-away photon torpedoes.</h6>
- <h2 class="quote">I find your lack of faith disturbing.</h2>
-    </blockquote>
-    <blockquote class="third">
-      <h3 class="textUpper">Experience</h3>
-      <h4>Sith Empire Headquarters, Dromund Kaas</h4>
-      <h5 class="inscriptions">Supreme Commander of Imperial Forces, Emperorâ€™s Enforcer</h5>
-      <ul>
-        <li>As the right-hand man to Emperor Sidious, hunted down jedi survivors and
-  enforced the will of the empire;</li>
-        <li>Oversaw construction of the first generation Death Star;</li>
-        <li>First ever Imperial Supreme Commander;</li>
-      </ul>
-      <h4>Wallyâ€™s Parts / Toyarian Watto junk shop, Mos Espa, Tatooine</h4>
-      <h5 class="inscriptions">Enslaved Volunteer</h5>
-      <ul>
-        <li>General help and front-desk retail operations at the junk shop, second hand
-  droid parts, mechanical / droid repair services;</li>
-        <li>Designed and piloted custom-built Podracer, ran track-side operations for the
-  podracing team;</li>
-      </ul>
-      <h2 class="quote">When I left you, I was but the learner; now I am the master.
-</h2>
-      
-    </blockquote>
-     <blockquote class="fourth">
-       <h3 class="textUpper">Formal training
-</h3>
-       <h4>Green Fox Academy, Earth</h4>
-       <h4 class="inscriptions">Full stack developer</h4>
-       <ul>
-         <li>Padawan to Knight Tojas;</li>
-         <li>Learned programming with a specialisation in JavaScript and Front-end
-  technologies</li>
-       </ul>
-       <h4>Sith Empire, Coruscant</h4>
-       <h4 class="inscriptions">Master of the Dark Side of the Force</h4>
-       <ul>
-         <li>Apprentice to Sith Lord Darth Sidious;</li>
-       </ul>
-       <h4>Jedi Order Academy, Coruscant</h4>
-       <h4 class="inscriptions">Master of Jedi Force</h4>
-       <ul>
-         <li>Padawan to Knight Obi Wan Kenobi. Bodyguard to Senator Padme Amidala during
-  the Clone Wars of 22 BBY;</li>
-         <li>Graduated with donors;
-</li>
-       </ul>
-       
-     </blockquote>
-    <footer>
-      <h3 class="textUpper">Personal interests</h3>
-      <ul>
-        <li>Midi-Chlorian research as a hobby;</li>
-        <li>Recreational mind-control techniques;</li>
-        <li>Amateur and local club podracing.
-</li>
-      </ul>
-    </footer>
-  </div>
-</main>
-<!-- partial -->
-  
+    
 </body>
+<script src="app.js"></script>
 </html>
