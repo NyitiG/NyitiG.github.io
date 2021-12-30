@@ -1,8 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
     text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
+a, a:active, a:hover {
+  color: #000;
+}
+/* 
+color sheme:
+
+#ffd9da
+#ea638c
+#89023e
+#30343f
+#1b2021 */
+
+body {
+    background-color: #ffd9da;
+}
+.fontPlayfair {
+  font-family: 'Playfair Display', serif;
+}
+.fontSourceSansPro {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.displayFlexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.displayFlexRow {
+  display: flex;
+  flex-direction: row;
+}
+.flexWrap {
+  flex-wrap: wrap;
+}
+.alingnItemsCenter {
+  align-items: center;
+}
+.textCenter {
+  text-align: center;
+}
+.justiContSpA {
+  justify-content: space-around;
+}
+.textUppercase {
+  text-transform: uppercase;
+}
+
+/* Container Full style */
+
+#containerFull {
+  width: 100%;
+  padding-top: 3vh;
+}
+
+/* Header style */
+#logoImg {
+  margin: 0vh 3vw;
+  width: 100px;
+  height: 65px;
+}
+
+/* Main style */
+
+#main {
+  margin-top: 8vh;
+}
+#mainText {
+  margin-bottom: 8vh;
+}
+#mainText h1 {
+  font-size: 2rem;
+}
+#mainProfilePic {
+  
+}
+#profileImg {
+  width: 200px;
+  height: 327px;
+  border-radius: 50%;
+  box-shadow: 12px 12px 2px 1px #1b2021;
+}
+#mainDivContainer {
+  margin: 5vh 0vw;
+}
+.mainDivBox {
+  height: 300px;
+  width: 250px;
+  margin-top: 5vh;
+  padding-top: 3vh;
+  background-color: rgb(234 99 140 / 10%);
+}
+.material-iconsMargin {
+  margin: 10px 15px;
+}
+.material-icons.md-48 { 
+  font-size: 48px; 
+}
+.mainDivBoxTextMargin {
+  margin-bottom: 3vh;
+}
+.mainDivBoxTextH3 {
+  font-size: 1.3rem;
+}
+
+/* Abour Me style */
+
+#aboutMe {
+  margin: 5vh 3vw;
+  padding: 3vh 3vw;
+  border-top: 0.5vh solid #1d1d1d;
+  border-bottom: 0.5vh solid #1d1d1d;
+}
+#aboutMeH3 {
+  font-weight: bold;
+}
+#aboutMeText {
+  margin: 3vh;
+}
+
+/* script style */
+
+#script {
+  margin-left: 3vw;
+  margin-bottom: 3vh;
+  padding: 1vh 3vw;
+  font-size: 1.8rem;
+}
+.scriptTextSpan {
+  color: #1b2021;
+  font-weight: bold;
+}
+
+/* contact  */
+
+#contact {
+  padding: 12vh 5vw 3vh 5vw;
+  color: #fdf1f2;
+  background-color: #30343f;
+  height: 100vh;
+}
+
+#contactH3 {
+  font-size: 2rem;
+  margin-bottom: 10vh;
+}
+#contactDivBoxImg {
+  height: 40px;
+  width: 47px;
+}
+#contactLink {
+  color: #fdf1f2;
+}
+.contackIcoBordRad {
+  border-radius: 10%;
+}
+
+ /*product.html*/
+
+ .productGallery {
+
+  text-transform: uppercase;
+  transition:all .2s cubic-bezier(.34,1.12,.68,1.31);
+  min-height: 100vh;
+  background:#fdf1f2;
+  padding-bottom: 100px;
+
+ }
+
+ .productGallery .controlls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding:20px 0;
+  list-style: none;
+  width: 100%;
+}
+ 
+.productGallery .controlls .buttons {
+  height:40px;
+    width: 180px;
+    background:#fdf1f2;
+    color:#eb8f9c;
+    font-size: 15px;
+    line-height: 40px;
+    cursor: pointer;
+    margin:20px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    text-align: center;
+}
+
+.productGallery .controlls .buttons:hover {
+  color: #fdf1f2;
+  background-color: #eb8f9c;
+}
+
+.productGallery .controlls .buttons:active {
+  color: #fdf1f2;
+  background-color: #b7515a;
+  transition: .10s;
+
+}
+
+.productGallery .controlls .buttons.active {
+  color: #fdf1f2;
+  background-color: #b7515a;
+  transition: .10s;
+
+}
+
+.productGallery .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.productGallery .image-container  .images {
+  height:250px;
+  width: 350px;
+  overflow: hidden;
+  border:15px solid #fdf1f2;
+  box-shadow: 0 3px 5px rgba(0,0,0,.3);
+  margin: 20px;
+}
+
+.productGallery .image-container  .images img {
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+}
+
+.productGallery .image-container  .images:hover img {
+  transform: scale(1.4);
+}
+
+/* product.html popUpGallery CSS*/
+
+.hide {
+  display: none;
+}
+
+.popUpGallery {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #636363;
+
+}
+
+.popUpGalleryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftArrow {
+  height: 100%;
+  font-size: 75px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+.leftArrow:hover {
+  background-color: #a7a7a7;
+}
+
+.leftArrow:active {
+  background-color: #e7b9b9;
+  color: #1d1d1d;
+}
+
+.popUpImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 2;
+  margin: 0px auto;
+
+}
+
+.popUpImage img {
+  height: 50%;
+  width: 67%;
+  justify-content: center;
+  object-fit: scale-down;
+}
+
+.popUpGalleryClose {
+  position: absolute;
+  top: 1%;
+  right: 10%;
+}
+
+.rightArrow {
+  height: 100%;
+  font-size: 75px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+@media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 858px){
+    .chkbtn{
+      display: block;
+    }
+    .navigation{
+
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #b7515a;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+      color: #fdf1f2;
+    }
+    
+    #chk001:checked ~ ul{
+      left: 0;
+    }
+
+    #footerCr {
+      clear: both;
+      position: fixed;
+      top: 99.9%;
+
+    }
+  }
+
+  #footerCr {
+      
+      position: absolute;
+
+      top: 1600px;
+      height: 30px;
+      width: 100%;
+      text-align: center;
+    font-family: 'Ephesis', cursive;
+
+  }
+
+  #h4ER {
+    color: #eb8f9c;
+   margin: 10px auto;
+ }
+
+ #h4ER:hover {
+   color: #b7515a;
+ }
+
+/*háttér kicsit legyen sötétebb rózsaszín
+-kati képe nagyob legyen 2x-es, mellette legyen a szöveg
+- a főldalon a termékek épe arányosabb legyen magasságból elvenni*/
