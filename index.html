@@ -1,14 +1,112 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Ez lesz a kezdő oldalam</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Katica szappanja</title>
 </head>
+
 <body>
-   <h1>Ez lesz a kezdő oldalam</h1>
+ <div id="containerFull" class=" displayFlexColumn">
+     <section >
+        <div id="header" class="displayFlexRow">
+            <div id="logo" class="">
+                <h2 id="logoImg" class="fontPlayfair">logo</h2>
+                <!-- 
+                <img id="logoImg" class="" src="/img/Katica szappanja icon.jpg" alt=""> -->
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="main" class="displayFlexColumn alingnItemsCenter">
+            <div id="mainText" class="alingnItemsCenter">
+                <h1 class="textCenter fontPlayfair">Katica Szappanja</h1>
+            </div>
+            <div id="mainProfilePic">
+                <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.6435-1/c0.0.200.200a/p200x200/108094948_1194160000976803_5593353433246692227_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=7206a8&_nc_ohc=xKg7uOdxoRYAX_7ldcx&_nc_ht=scontent-vie1-1.xx&oh=00_AT9yk9zvwiu7LP5gCTnNUwLIeQXlBTYINqCATLhB_Iqvpg&oe=61F20BED" alt="" id="profileImg">
+            </div>
+            <div id="mainDivContainer" class="displayFlexRow flexWrap justiContSpA">
+                <div id="" class="mainDivBox displayFlexRow">
+                    <i class="material-icons md-48 material-iconsMargin">person</i>
+                    <div class="mainDivBoxTextBox displayFlexColumn ">
+                        <h3 class="mainDivBoxTextH3 mainDivBoxTextMargin fontPlayfair">Rólam</h3>
+                        <p class="mainDivBoxTextMargin fontSourceSansPro">Röviden egy sorban magamról</p>
+                        <a href="#aboutMe"><i class="material-icons md-48">arrow_forward</i></a>
+                    </div>
+                </div>
+                <div id="" class="mainDivBox displayFlexRow" >
+                    <i class="material-icons md-48 material-iconsMargin">photo</i>
+                    <div class="mainDivBoxTextBox displayFlexColumn ">
+                        <h3 class="mainDivBoxTextH3 mainDivBoxTextMargin fontPlayfair">Termékeim</h3>
+                        <p class="mainDivBoxTextMargin fontSourceSansPro">Minden termékem egyedi, az elkészültekről a galériában találsz képeket</p>
+                        <a href="#"><i class="material-icons md-48">arrow_forward</i></a>
+                    </div>
+                </div>
+                <div id="" class="mainDivBox displayFlexRow">
+                    <i class="material-icons md-48 material-iconsMargin">room</i>
+                    <div class="mainDivBoxTextBox displayFlexColumn ">
+                        <h3 class="mainDivBoxTextH3 mainDivBoxTextMargin fontPlayfair">Kapcsolat</h3>
+                        <p class="mainDivBoxTextMargin fontSourceSansPro">Így veheted fel velem a kapcsolatot</p>
+                        <a href="#contact"><i class="material-icons md-48">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+    <section>
+        <div id="aboutMe" class="displayFlexRow alingnItemsCenter flexWrap justiContSpA">
+            <h3 id="aboutMeH3" class="textUppercase fontPlayfair">Rólam</h3>
+            <p id="aboutMeText" class="fontSourceSansPro">Kassai Kata vagyok. Nagyon szeretem a természetes dolgokat. 
+                                        Minden szappanom természetes alapanyagokból nagy odafigyeléssel, törődéssel 
+                                        készül. Az egyik legfontosabb összetevője a szertet. Minden termékemben egy nagy adagot
+                                        teszek e nélkülözhetetlen alapanyagból. Köszönöm, hogy meglátogattad a weboldalam!... </p>
+        </div>
+    </section>
+    <section>
+        <div id="script" class="displayFlexColumn">
+            <p id="scriptText" class="fontPlayfair">
+                Ide lehetne 1 használó 1-2 mondantos visszajelzését leírni.
+                pl.: Katica szappanja ellazít, <span class="scriptTextSpan"> bőrömet rugalmassá, bársonyossá tette</span>. 
+            </p>
+        </div>
+    </section>
+    <section>
+        <div id="contact" class="displayFlexColumn">
+            <h3 id="contactH3" class="textUppercase textCenter">Elérhetőségeim</h3>
+            <div id="contactDivContainer" class="">
+                <div id="contactDivBox" class="displayFlexRow alingnItemsCenter">
+                    <i class="material-icons md-48 material-iconsMargin contackIcoBordRad">contact_phone</i>
+                    <p>+36/01/123-4567</p> 
+                </div>
+                <div id="contactDivBox" class="displayFlexRow alingnItemsCenter">
+                    <i class="material-icons md-48 material-iconsMargin contackIcoBordRad">contact_mail</i>
+                    <a id="contactLink" href="mailto:katicaszappanja@gmail.com">katicaszappanja@gmail.com</a>
+                </div>
+                <div id="contactDivBox" class="displayFlexRow">
+                    <a href="https://www.facebook.com/katica.szappanja" target="_blank">
+                    <img id="contactDivBoxImg" class="material-iconsMargin contackIcoBordRad" src="https://blog-assets.hootsuite.com/wp-content/uploads/2018/09/flogo-RGB-HEX-Blk-58.png" alt="Facebook link">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="footer" class="displayFlexColumn alingnItemsCenter">
+            <p id="" class="fontSourceSansPro">Created by:
+                <a href="https://www.facebook.com/profile.php?id=100008429973897" target="_blank">NyitiG</a>
+            </p>
+        </div>
+    </section>
+ </div>
+    <!--Script load-->
+    <script src="script.js"></script>
 </body>
 
 </html>
