@@ -191,7 +191,6 @@ function createContainerBody() {
     `;
     containerTemp=containerTempb;
     }
-    console.log(containerTemp)
     let containerBodyTemp = containerBodyTemplate+containerTemp;
     toDoListContainerBody.innerHTML=containerBodyTemp;
     textEditAllowed();
