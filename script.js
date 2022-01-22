@@ -17,10 +17,7 @@ const changeGenderStyleSelector = document.querySelectorAll('[data-gender]');
 const manIconTag = document.querySelector('#man');
 const femaleIconTag = document.querySelector('#female');
 
-
-
 // let
-
 const backgroundColor1Selector = document.querySelectorAll('.backgroundColor1')
 const backgroundColor2Selector = document.querySelector('.backgroundColor2')
 const backgroundColor1GSelector = document.querySelectorAll('.backgroundColor1G')
@@ -38,8 +35,6 @@ inputText.addEventListener("keyup", inputTextLoad);
 inputText.addEventListener("keypress", validEnt);
 addToDoList.addEventListener("click", createContainerBody);
 deleteAll.addEventListener("click", deleteAllToDoListContainerBody);
-
-
 
 // function
 function changeEnglish() {
@@ -155,11 +150,9 @@ function changeGenderStyle(checkIdValid) {
         toDoListContainerHeaderBorderBottomSelector.classList.add("toDoListContainerHeaderBorderBottomG");
         toDoListContainerHeaderBorderBottomSelector.classList.remove("toDoListContainerHeaderBorderBottom");
     }
-    
 }
 function inputTextLoad() {
     inputTextValue= inputText.value;
-    // console.log(inputTextValue);
 }
 function validEnt(event) {
     if (event.keyCode == 13) {
@@ -199,9 +192,9 @@ function textEditAllowed() {
         pTextTag[i].addEventListener('mouseleave', textEditClose);
         pTextTag[i].addEventListener('keypress', validEnter);
         pencilTag[i].addEventListener('click', function() { 
+            validEnter();
             let oldText= pTextTag[i].innerHTML;
             pTextTag[i].setAttribute("contenteditable","true");
-
         });
     }
 }
@@ -209,14 +202,6 @@ function textEdit(event) {
     event.preventDefault();
  let oldText = this.innerHTML;
  this.setAttribute("contenteditable","true");
-}
-function textEditPencil(index) {
-    const pTextTag = document.querySelectorAll('.text');
-    let i=index;
-    console.log(i);
-    console.log(pTextTag[i])
-   
-    
 }
 function textEditClose(event) {
     this.removeAttribute("contenteditable");
@@ -243,8 +228,7 @@ function alertAllowed() {
                     pTextTagIndex.classList.remove("alert","color3");
                 } else {
                     pTextTagIndex.classList.remove("alert","color3G");
-                }
-                
+                }                
             }
         });
     }
@@ -276,56 +260,8 @@ function deleteRole() {
     const deleteTag = document.querySelectorAll('.trashIcon');
     for (let index = 0; index < deleteTag.length; index++) {
         const deleteContainerIndex=deleteContainer[index];
-        // console.log(deleteContainerIndex);
         deleteTag[index].addEventListener('click', function () {
-            // console.log(deleteContainerIndex);
             deleteContainerIndex.remove(deleteContainerIndex);
         })
-        
     }
 }
-
-
-
-/*
-
-Ezt kell megcsinálnod!!!
-userMessageAction(); // Résztvevők kattinthatók legyenek
-function userMessageAction() {
-	const userMessageDiv= document.querySelectorAll(".profPic");
-	const displayFlexPartiDiv=document.querySelectorAll(".chatMessage");
-	for (let i = 0; i < userMessageDiv.length; i++) {
-		// A résztvevők container-e clikk eventet kap, ha clikk=>chatablak creat
-		let x=userMessageDiv[i].innerHTML;
-		displayFlexPartiDiv[i].addEventListener('click', createChatMessage);
-	}
-};
-
-
-pTextp.addEventListener('mouseover', textEdit);
-pTextp.addEventListener('click', textEdit);
-pTextp.addEventListener('keypress', validEnter);
-pTextp.addEventListener('mouseleave', textEditClose)
-
-
-function textEdit(event) {
-    event.preventDefault();
- let oldText = this.innerHTML;
- console.log(oldText);
- this.setAttribute("contenteditable","true");
-
-}
-function validEnter(event) {
-    if (event.keyCode == 13) {
-        this.removeAttribute("contenteditable");
-    }
-}
-function textEditClose(event) {
-    this.removeAttribute("contenteditable");
-}
-
-
-/*let inputTemplate =`
- <input type="text " id="newInput" value="${oldText}">`;
- this.parentNode.removeChild(this);
- text1Div.innerHTML = inputTemplate;*/ 
