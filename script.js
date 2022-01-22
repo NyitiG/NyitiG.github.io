@@ -163,7 +163,22 @@ function createContainerBody() {
     inputText.value="";
     containerBodyTemplate=toDoListContainerBody.innerHTML;
     let inputValueTemp=inputTextValue;
-    let containerTemp= `
+    let containerTemp="";
+    if (changeGenderStyleSelector[0].dataset.gender == "female") {
+        let containerTempa= `
+    <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottomG " >
+                    <p id="" class="fontLibreText fontSize1dot5 text"  contenteditable="false">${inputValueTemp}</p>
+                    <div id="toDoListEventContainer">
+                        <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
+                        <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
+                        <ion-icon class="fontSize1dot5 checkIcon" name="checkmark-outline"></ion-icon>
+                        <ion-icon class="fontSize1dot5 trashIcon" name="trash-outline"></ion-icon>
+                    </div>
+                </div>
+    `;
+    containerTemp=containerTempa;
+    } else {
+        let containerTempb= `
     <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottom " >
                     <p id="" class="fontLibreText fontSize1dot5 text"  contenteditable="false">${inputValueTemp}</p>
                     <div id="toDoListEventContainer">
@@ -174,6 +189,9 @@ function createContainerBody() {
                     </div>
                 </div>
     `;
+    containerTemp=containerTempb;
+    }
+    console.log(containerTemp)
     let containerBodyTemp = containerBodyTemplate+containerTemp;
     toDoListContainerBody.innerHTML=containerBodyTemp;
     textEditAllowed();
