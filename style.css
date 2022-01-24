@@ -104,6 +104,9 @@
 .paddingBottom {
     padding-bottom: 7vh;
 }
+.borderRadius5 {
+    border-radius: 5px;
+}
 .iconSize {
     padding: 0.2rem;
     font-size: 2.6rem;
@@ -135,6 +138,9 @@
     /* color: #bcab79;   */
     text-decoration: line-through;
 }
+.outlineNone {
+    outline: none;
+}
 
 /* Container style */
 
@@ -157,6 +163,7 @@
     width: 56vw;
     padding: 0.5vh 0.5vw; 
 }
+
 .inputContainerInputBorder {
     border: 0.2rem solid #bcab79;
 }
