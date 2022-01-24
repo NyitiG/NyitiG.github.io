@@ -167,7 +167,7 @@ function createContainerBody() {
     if (changeGenderStyleSelector[0].dataset.gender == "female") {
         let containerTempa= `
     <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottomG " >
-                    <p id="" class="fontLibreText fontSize1dot5 text"  contenteditable="false">${inputValueTemp}</p>
+                    <p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">${inputValueTemp}</p>
                     <div id="toDoListEventContainer">
                         <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
                         <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
@@ -180,7 +180,7 @@ function createContainerBody() {
     } else {
         let containerTempb= `
     <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottom " >
-                    <p id="" class="fontLibreText fontSize1dot5 text"  contenteditable="false">${inputValueTemp}</p>
+                    <p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">${inputValueTemp}</p>
                     <div id="toDoListEventContainer">
                         <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
                         <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
@@ -206,7 +206,6 @@ function textEditAllowed() {
     const pencilTag = document.querySelectorAll('.pencil');
     for (let i = 0; i < pTextTag.length; i++) {
         pTextTag[i].addEventListener('mouseover', textEdit);
-        pTextTag[i].addEventListener('mouseleave', textEditClose);
         pTextTag[i].addEventListener('keypress', validEnter);
         pencilTag[i].addEventListener('click', function() { 
             validEnter();
