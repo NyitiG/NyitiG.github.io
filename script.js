@@ -193,3 +193,4 @@
 .borderBottomG {
     border-bottom: 0.1rem solid #ea638c;
 }
+
