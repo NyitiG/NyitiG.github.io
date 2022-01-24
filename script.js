@@ -33,7 +33,7 @@ manIconTag.addEventListener("click", changeGenderStyleValid);
 femaleIconTag.addEventListener("click", changeGenderStyleValid)
 inputText.addEventListener("keyup", inputTextLoad);
 inputText.addEventListener("keypress", validEnt);
-addToDoList.addEventListener("click", createContainerBody);
+addToDoList.addEventListener("click", checkInputValue);
 deleteAll.addEventListener("click", deleteAllToDoListContainerBody);
 
 // function
@@ -154,9 +154,18 @@ function changeGenderStyle(checkIdValid) {
 function inputTextLoad() {
     inputTextValue= inputText.value;
 }
+function checkInputValue() {
+    if (inputTextValue == "") {
+        return
+    } else {
+        createContainerBody();
+    }
+    
+    
+}
 function validEnt(event) {
     if (event.keyCode == 13) {
-        createContainerBody();
+        checkInputValue();
     }
 }
 function createContainerBody() {
@@ -208,7 +217,7 @@ function textEditAllowed() {
         pTextTag[i].addEventListener('mouseover', textEdit);
         pTextTag[i].addEventListener('keypress', validEnter);
         pencilTag[i].addEventListener('click', function() { 
-            validEnter();
+            validEnter;
             let oldText= pTextTag[i].innerHTML;
             pTextTag[i].setAttribute("contenteditable","true");
         });
