@@ -83,6 +83,9 @@
 .jusConSpacBetw {
     justify-content: space-between;
 }
+.jusConCenter {
+    justify-content: center;
+}
 .marginTopBottom {
     margin: 10vh;
 }
@@ -109,6 +112,9 @@
 .languageIcon {
     text-align: center;
     border-radius: 50%;
+
+}
+.paddingMargin5px {
     padding: 5px 5px;
     margin: 5px 5px;
 }
@@ -138,9 +144,10 @@
 }
 #HeaderH1 {
     width: 80vw;
+    padding: 0vh 2vw;
 }
 #H1 {
-    font-size: 3rem;
+    font-size: 2.3rem;
     text-align: center;
 }
 
@@ -148,7 +155,6 @@
 
 #inputContainerInput {
     width: 56vw;
-    font-size: 2rem;
     padding: 0.5vh 0.5vw; 
 }
 .inputContainerInputBorder {
