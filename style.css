@@ -200,3 +200,17 @@
 .borderBottomG {
     border-bottom: 0.1rem solid #ea638c;
 }
+
+/* icon cursor pointer */
+ .pencil:hover {
+     cursor: pointer;
+ }
+ .alertIcon:hover {
+     cursor: pointer;
+ }
+ .checkIcon:hover {
+     cursor: pointer;
+ }
+ .trashIcon:hover {
+     cursor: pointer;
+ }
