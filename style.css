@@ -202,15 +202,37 @@
 }
 
 /* icon cursor pointer */
+#hun:hover {
+    cursor: pointer;
+}
+#english:hover {
+    cursor: pointer;
+}
+#man:hover {
+    cursor: pointer;
+}
+#female:hover {
+    cursor: pointer;
+}
+#addToDoList:hover {
+    cursor: pointer;
+}
+#deleteAll:hover {
+    cursor: pointer;
+}
  .pencil:hover {
      cursor: pointer;
+     font-size: 1.8rem;
  }
  .alertIcon:hover {
      cursor: pointer;
+     font-size: 1.8rem;
  }
  .checkIcon:hover {
      cursor: pointer;
+     font-size: 1.8rem;
  }
  .trashIcon:hover {
      cursor: pointer;
+     font-size: 1.8rem;
  }
