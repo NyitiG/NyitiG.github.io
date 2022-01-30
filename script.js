@@ -1,286 +1,238 @@
-// const
-const englishLang =document.getElementById("english");
-const hunLang=document.getElementById('hun');
-const h1TextTag= document.getElementById("H1");
-const toDoListContainerBody = document.querySelector('#toDoListContainerBody');
-const pCreat = document.createElement('p');
-const pTextp = document.getElementById("textp");
-const text1Div = document.getElementById('text1');
-const inputText =document.getElementById('inputContainerInput');
-const toDoListContainerHeaderPar=document.getElementById('toDoListContainerHeaderPar');
-const addToDoList = document.getElementById('addToDoList');
-const deleteAll = document.querySelector('#deleteAll');
-const deletequestion =document.getElementById('deletequestion');
-const deleteYesAllList= document.getElementById('yes');
-const deleteNoAllList =document.getElementById('no');
-const changeGenderStyleSelector = document.querySelectorAll('[data-gender]');
-const manIconTag = document.querySelector('#man');
-const femaleIconTag = document.querySelector('#female');
+ @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Roboto:wght@700&display=swap');
+ 
+ /*General style  */
 
-// let
-const backgroundColor1Selector = document.querySelectorAll('.backgroundColor1')
-const backgroundColor2Selector = document.querySelector('.backgroundColor2')
-const backgroundColor1GSelector = document.querySelectorAll('.backgroundColor1G')
-const backgroundColor2GSelector = document.querySelector('.backgroundColor2G')
-const color1Selector = document.querySelectorAll('.color1')
-let inputTextValue="";
-let containerBodyTemplate="";
-let containerTemplateFemale=`G`;
-let containerTempFirst= `
-<div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottom`;
-let containerTempSecund=`" >
-<p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">`;
-let containerTempThird =`</p>
-<div id="toDoListEventContainer">
-    <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
-    <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
-    <ion-icon class="fontSize1dot5 checkIcon" name="checkmark-outline"></ion-icon>
-    <ion-icon class="fontSize1dot5 trashIcon" name="trash-outline"></ion-icon>
-</div>
-</div>`;
+ /* Boy color palette */
+ .color1 {
+     color: #253031 ;
+ }
+ .color2 {
+     color: #315659;
+ }
+ .color3 {
+     color: #2978a0;
+ }
+ .color4 {
+     color: #bcab79;
+ }
+ .color5 {
+     color: #c6e0ff;
+ }
+ /* Girl color palette */
+ .color1G {
+     color: #1b2021;
+ }
+ .color2G {
+     color: #30343f;
+ }
+ .color3G {
+     color: #89023e;
+ }
+ .color4G {
+     color: #ea638c;
+ }
+ .color5G {
+     color: #ffd9da;
+ }
+ .backgroundColor1 {
+     background-color: #2978a0;
+ }
+ .backgroundColor2 {
+     background-color: #c6e0ff;
+ }
+ .backgroundColor1G {
+     background-color: #89023e;
+ }
+ .backgroundColor2G {
+     background-color: #ffd9da;
+ }
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+ body {
+    height: 100vh;
+ }
+ .fontRoboHeader {
+    font-family: 'Roboto', sans-serif;
+ }
+ .fontLibreText {
+    font-family: 'Libre Franklin', sans-serif;
+ }
+ .displayFlexRow {
+     display: flex;
+     flex-direction: row;
+ }
+ .displayFlexColumn {
+     display: flex;
+     flex-direction: column;
+ }
+.wrap {
+    flex-wrap: wrap;
+}
+.nowrap {
+    flex-wrap: nowrap;
+}
+.alignItemsCenter {
+    align-items: center;
+}
+.jusConSpacAround {
+    justify-content: space-around;
+}
+.jusConSpacBetw {
+    justify-content: space-between;
+}
+.jusConCenter {
+    justify-content: center;
+}
+.marginTopBottom {
+    margin: 10vh;
+}
+.marginTop {
+    margin-top: 10vh;
+}
+.marginBottom {
+    margin-bottom: 10vh;
+}
+.marginTop2vh {
+    margin-top: 2vh;
+}
+.marginTop5vh {
+    margin-top: 5vh;
+}
+.paddingBottom {
+    padding-bottom: 7vh;
+}
+.borderRadius5 {
+    border-radius: 5px;
+}
+.iconSize {
+    padding: 0.2rem;
+    font-size: 2.6rem;
+    margin-left: 0.5vw;
+}
+.languageIcon {
+    text-align: center;
+    border-radius: 50%;
 
-// addEventListener
-englishLang.addEventListener("click", changeEnglish);
-hunLang.addEventListener("click", changeHun);
-manIconTag.addEventListener("click", changeGenderStyleValid);
-femaleIconTag.addEventListener("click", changeGenderStyleValid)
-inputText.addEventListener("keyup", function () {inputTextValue= inputText.value;});
-inputText.addEventListener("keypress", validEnt);
-addToDoList.addEventListener("click", checkInputValue);
-deleteAll.addEventListener("click", deleteAllToDoListContainerBody);
-
-// function
-function changeEnglish() {
-    document.documentElement.setAttribute("lang", "en");
-    h1TextTag.innerHTML="ToDoList";
-    inputText.placeholder="Add your new todo";
-    toDoListContainerHeaderPar.innerHTML="Task Name";
 }
-function changeHun() {
-    document.documentElement.setAttribute("lang", "hu");
-    h1TextTag.innerHTML="Teendők Listája";
-    inputText.placeholder="Teendő neve";
-    toDoListContainerHeaderPar.innerHTML="Teendők";
+.paddingMargin5px {
+    padding: 5px 5px;
+    margin: 5px 5px;
 }
-function changeGenderStyleValid(event) {
-    let checkIdValid =this.dataset.gender;
-    let bodyDataGender= changeGenderStyleSelector[0].dataset.gender;
-    if (checkIdValid==bodyDataGender) {
-        return;
-    } else {
-        changeGenderStyle(checkIdValid);
-    }    
+.fontSize1dot8 {
+    font-size: 1.8rem;
 }
-function changeGenderStyle(checkIdValid) {
-    let checkId =checkIdValid;
-    let selectorTag = changeGenderStyleSelector;
-    const backgroundColor1Selector = document.querySelectorAll('.backgroundColor1');
-    const backgroundColor2Selector = document.querySelector('.backgroundColor2');
-    const backgroundColor1GSelector = document.querySelectorAll('.backgroundColor1G');
-    const backgroundColor2GSelector = document.querySelector('.backgroundColor2G');
-    const color1Selector = document.querySelector('.color1');
-    const color1GSelector = document.querySelector('.color1G');
-    const color3Selector = document.querySelectorAll('.color3');
-    const color3GSelector = document.querySelectorAll('.color3G');
-    const color4Selector = document.querySelectorAll('.color4');
-    const color4GSelector = document.querySelectorAll('.color4G');
-    const color5Selector = document.querySelectorAll('.color5');
-    const color5GSelector = document.querySelectorAll('.color5G');
-    const borderBottomSelector = document.querySelectorAll('.borderBottom');
-    const borderBottomGSelector = document.querySelectorAll('.borderBottomG');
-    const inputContainerInputBorderSelector = document.querySelector('.inputContainerInputBorder');
-    const inputContainerInputBorderGSelector = document.querySelector('.inputContainerInputBorderG');
-    const toDoListContainerHeaderBorderBottomSelector = document.querySelector('.toDoListContainerHeaderBorderBottom');
-    const toDoListContainerHeaderBorderBottomGSelector = document.querySelector('.toDoListContainerHeaderBorderBottomG');
-    if (checkId=="man") {
-        let changeBackGround1G = backgroundColor1GSelector;
-        for (let index = 0; index < changeBackGround1G.length; index++) {
-            changeBackGround1G[index].classList.add("backgroundColor1");
-            changeBackGround1G[index].classList.remove("backgroundColor1G");
-        }
-        let changeColor3G = color3GSelector;
-        for (let index = 0; index < changeColor3G.length; index++) {
-            changeColor3G[index].classList.add('color3');
-            changeColor3G[index].classList.remove('color3G');
-        }
-        let changeColor4G = color4GSelector;
-        for (let index = 0; index < changeColor4G.length; index++) {
-            changeColor4G[index].classList.add('color4');
-            changeColor4G[index].classList.remove('color4G');
-        }
-        let changeColor5G = color5GSelector;
-        for (let index = 0; index < changeColor5G.length; index++) {
-            changeColor5G[index].classList.add('color5');
-            changeColor5G[index].classList.remove('color5G');
-        }
-        let changeBorderBottomG =borderBottomGSelector;
-        for (let index = 0; index < changeBorderBottomG.length; index++) {
-            changeBorderBottomG[index].classList.add('borderBottom');
-            changeBorderBottomG[index].classList.remove('borderBottomG');
-        }
-        selectorTag[0].dataset.gender="man";
-        backgroundColor2GSelector.classList.add("backgroundColor2");
-        backgroundColor2GSelector.classList.remove("backgroundColor2G");
-        color1GSelector.classList.add("color1");
-        color1GSelector.classList.remove("color1G");
-        inputContainerInputBorderGSelector.classList.add("inputContainerInputBorder");
-        inputContainerInputBorderGSelector.classList.remove("inputContainerInputBorderG");
-        toDoListContainerHeaderBorderBottomGSelector.classList.add("toDoListContainerHeaderBorderBottom");
-        toDoListContainerHeaderBorderBottomGSelector.classList.remove("toDoListContainerHeaderBorderBottomG");
-    } else {
-        let changeBackGround1 = backgroundColor1Selector;
-        for (let index = 0; index < changeBackGround1.length; index++) {
-            changeBackGround1[index].classList.add("backgroundColor1G");
-            changeBackGround1[index].classList.remove("backgroundColor1");
-        }
-        let changeColor3 = color3Selector;
-        for (let index = 0; index < changeColor3.length; index++) {
-            changeColor3[index].classList.add('color3G');
-            changeColor3[index].classList.remove('color3');
-        }
-        let changeColor4 = color4Selector;
-        for (let index = 0; index < changeColor4.length; index++) {
-            changeColor4[index].classList.add('color4G');
-            changeColor4[index].classList.remove('color4');
-        }
-        let changeColor5 = color5Selector;
-        for (let index = 0; index < changeColor5.length; index++) {
-            changeColor5[index].classList.add('color5G');
-            changeColor5[index].classList.remove('color5');
-        }
-        let changeBorderBottom =borderBottomSelector;
-        for (let index = 0; index < changeBorderBottom.length; index++) {
-            changeBorderBottom[index].classList.add('borderBottomG');
-            changeBorderBottom[index].classList.remove('borderBottom');
-        }
-        selectorTag[0].dataset.gender="female";
-        backgroundColor2Selector.classList.add("backgroundColor2G");
-        backgroundColor2Selector.classList.remove("backgroundColor2");
-        color1Selector.classList.add("color1G");
-        color1Selector.classList.remove("color1");
-        inputContainerInputBorderSelector.classList.add("inputContainerInputBorderG");
-        inputContainerInputBorderSelector.classList.remove("inputContainerInputBorder");
-        toDoListContainerHeaderBorderBottomSelector.classList.add("toDoListContainerHeaderBorderBottomG");
-        toDoListContainerHeaderBorderBottomSelector.classList.remove("toDoListContainerHeaderBorderBottom");
-    }
+.fontSize1dot5 {
+    font-size: 1.5rem;
+}
+.hide {
+    display: none;
+}
+.alert {
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+.textLineThrough {  
+    /* color: #bcab79;   */
+    text-decoration: line-through;
+}
+.outlineNone {
+    outline: none;
 }
 
-function checkInputValue() {
-    if (inputTextValue == "") {
-        return
-    } else {
-        createContainerBody();
-    }
+/* Container style */
+
+#container {
+    margin:10vh auto;
+    width: 80vw;
 }
-function validEnt(event) {
-    if (event.keyCode == 13) {
-        checkInputValue();
-    }
+#HeaderH1 {
+    width: 80vw;
+    padding: 0vh 2vw;
 }
-function createContainerBody() {
-    inputText.value="";
-    containerBodyTemplate=toDoListContainerBody.innerHTML;
-    let inputValueTemp=inputTextValue;
-    let containerTemp="";
-    if (changeGenderStyleSelector[0].dataset.gender == "female") {
-        let containerTempa= containerTempFirst+containerTemplateFemale+containerTempSecund+inputValueTemp+containerTempThird;
-    containerTemp=containerTempa;
-    } else {
-        let containerTempb=containerTempFirst+containerTempSecund+inputValueTemp+containerTempThird ;
-    containerTemp=containerTempb;
-    }
-    let containerBodyTemp = containerBodyTemplate+containerTemp;
-    toDoListContainerBody.innerHTML=containerBodyTemp;
-    textEditAllowed();
-    alertAllowed();
-    taskIsDone();
-    deleteRole();
+#H1 {
+    font-size: 2.3rem;
+    text-align: center;
 }
-function deleteAllToDoListContainerBody() {
-   toDoListContainerBody.innerHTML="";
+
+/* inputContainer style */
+
+#inputContainerInput {
+    width: 56vw;
+    padding: 0.5vh 0.5vw; 
 }
-function textEditAllowed() {
-    const pTextTag = document.querySelectorAll('.text');
-    const pencilTag = document.querySelectorAll('.pencil');
-    for (let i = 0; i < pTextTag.length; i++) {
-        pTextTag[i].addEventListener('mouseover', textEdit);
-        pTextTag[i].addEventListener('keypress', validEnter);
-        pencilTag[i].addEventListener('click', function() { 
-            validEnter;
-            let oldText= pTextTag[i].innerHTML;
-            pTextTag[i].setAttribute("contenteditable","true");
-        });
-    }
+
+.inputContainerInputBorder {
+    border: 0.2rem solid #bcab79;
 }
-function textEdit(event) {
-    event.preventDefault();
- let oldText = this.innerHTML;
- this.setAttribute("contenteditable","true");
+.inputContainerInputBorderG {
+    border: 0.2rem solid #ea638c;
 }
-function textEditClose(event) {
-    this.removeAttribute("contenteditable");
+
+/* toDoListContainer style */
+
+#toDoListContainer {
+    width: 60vw;
 }
-function validEnter(event) {
-    if (event.keyCode == 13) {
-        this.removeAttribute("contenteditable");
-    }
+#toDoListContainerHeader {
+    padding-bottom: 1vh;
 }
-function alertAllowed() {
-    const alertTag = document.querySelectorAll('.alertIcon');
-    const pTextTag = document.querySelectorAll('.text');
-    for (let index = 0; index < alertTag.length; index++) {
-        const pTextTagIndex = pTextTag[index];
-        const alertTagIndex= alertTag[index];
-        alertTag[index].addEventListener('click', function() {
-            if (pTextTagIndex.classList.contains('alert') == false) {
-                if (changeGenderStyleSelector[0].dataset.gender=="man") {
-                     pTextTagIndex.classList.add("alert","color3");
-                     alertTagIndex.classList.add("color3");
-                } else {
-                    pTextTagIndex.classList.add("alert","color3G");
-                    alertTagIndex.classList.add("color3G");
-                }
-            } else {
-                if (pTextTagIndex.classList.contains('color3')) {
-                    pTextTagIndex.classList.remove("alert","color3");
-                    alertTagIndex.classList.remove("color3");
-                } else {
-                    pTextTagIndex.classList.remove("alert","color3G");
-                    alertTagIndex.classList.remove("color3G");
-                }                
-            }
-        });
-    }
+.toDoListContainerHeaderBorderBottom {
+    border-bottom: 0.2rem solid #253031;
 }
-function taskIsDone() {
-    const checkTag = document.querySelectorAll('.checkIcon');
-    const pTextTag = document.querySelectorAll('.text');
-    for (let index = 0; index < checkTag.length; index++) {
-        const pTextTagIndex = pTextTag[index];
-        checkTag[index].addEventListener('click', function () {
-            if (pTextTagIndex.classList.contains('textLineThrough') == false) {
-               if (changeGenderStyleSelector[0].dataset.gender=="man") {
-                    pTextTagIndex.classList.add("textLineThrough", "color4");
-                } else {
-                    pTextTagIndex.classList.add("textLineThrough", "color4G");
-                }
-            } else {
-                if (pTextTagIndex.classList.contains('color4')) {
-                    pTextTagIndex.classList.remove("textLineThrough", "color4");
-                } else {
-                    pTextTagIndex.classList.remove("textLineThrough", "color4G");
-                    }
-            }
-        })
-    }
+.toDoListContainerHeaderBorderBottomG {
+    border-bottom: 0.2rem solid #1b2021;
 }
-function deleteRole() {
-    const deleteContainer = document.querySelectorAll('.deleteContainer');
-    const deleteTag = document.querySelectorAll('.trashIcon');
-    for (let index = 0; index < deleteTag.length; index++) {
-        const deleteContainerIndex=deleteContainer[index];
-        deleteTag[index].addEventListener('click', function () {
-            deleteContainerIndex.remove(deleteContainerIndex);
-        })
-    }
+#toDoListContainerHeaderPar {
+    font-size: 1.8rem;
 }
+
+/* toDoListTextEventContainer style */
+
+.toDoListTextEventContainer {
+    padding: 1vh 0vw;  
+}
+.borderBottom {
+    border-bottom: 0.1rem solid #bcab79;
+}
+.borderBottomG {
+    border-bottom: 0.1rem solid #ea638c;
+}
+
+/* icon cursor pointer */
+#hun:hover {
+    cursor: pointer;
+}
+#english:hover {
+    cursor: pointer;
+}
+#man:hover {
+    cursor: pointer;
+}
+#female:hover {
+    cursor: pointer;
+}
+#addToDoList:hover {
+    cursor: pointer;
+}
+#deleteAll:hover {
+    cursor: pointer;
+}
+ .pencil:hover {
+     cursor: pointer;
+     font-size: 1.8rem;
+ }
+ .alertIcon:hover {
+     cursor: pointer;
+     font-size: 1.8rem;
+ }
+ .checkIcon:hover {
+     cursor: pointer;
+     font-size: 1.8rem;
+ }
+ .trashIcon:hover {
+     cursor: pointer;
+     font-size: 1.8rem;
+ }
