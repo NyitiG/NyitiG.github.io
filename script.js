@@ -25,13 +25,26 @@ const backgroundColor2GSelector = document.querySelector('.backgroundColor2G')
 const color1Selector = document.querySelectorAll('.color1')
 let inputTextValue="";
 let containerBodyTemplate="";
+let containerTemplateFemale=`G`;
+let containerTempFirst= `
+<div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottom`;
+let containerTempSecund=`" >
+<p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">`;
+let containerTempThird =`</p>
+<div id="toDoListEventContainer">
+    <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
+    <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
+    <ion-icon class="fontSize1dot5 checkIcon" name="checkmark-outline"></ion-icon>
+    <ion-icon class="fontSize1dot5 trashIcon" name="trash-outline"></ion-icon>
+</div>
+</div>`;
 
 // addEventListener
 englishLang.addEventListener("click", changeEnglish);
 hunLang.addEventListener("click", changeHun);
 manIconTag.addEventListener("click", changeGenderStyleValid);
 femaleIconTag.addEventListener("click", changeGenderStyleValid)
-inputText.addEventListener("keyup", inputTextLoad);
+inputText.addEventListener("keyup", function () {inputTextValue= inputText.value;});
 inputText.addEventListener("keypress", validEnt);
 addToDoList.addEventListener("click", checkInputValue);
 deleteAll.addEventListener("click", deleteAllToDoListContainerBody);
@@ -151,17 +164,13 @@ function changeGenderStyle(checkIdValid) {
         toDoListContainerHeaderBorderBottomSelector.classList.remove("toDoListContainerHeaderBorderBottom");
     }
 }
-function inputTextLoad() {
-    inputTextValue= inputText.value;
-}
+
 function checkInputValue() {
     if (inputTextValue == "") {
         return
     } else {
         createContainerBody();
     }
-    
-    
 }
 function validEnt(event) {
     if (event.keyCode == 13) {
@@ -174,30 +183,10 @@ function createContainerBody() {
     let inputValueTemp=inputTextValue;
     let containerTemp="";
     if (changeGenderStyleSelector[0].dataset.gender == "female") {
-        let containerTempa= `
-    <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottomG " >
-                    <p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">${inputValueTemp}</p>
-                    <div id="toDoListEventContainer">
-                        <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 checkIcon" name="checkmark-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 trashIcon" name="trash-outline"></ion-icon>
-                    </div>
-                </div>
-    `;
+        let containerTempa= containerTempFirst+containerTemplateFemale+containerTempSecund+inputValueTemp+containerTempThird;
     containerTemp=containerTempa;
     } else {
-        let containerTempb= `
-    <div id="" class="displayFlexRow jusConSpacBetw toDoListTextEventContainer deleteContainer borderBottom " >
-                    <p id="" class="fontLibreText fontSize1dot5 text outlineNone"  contenteditable="false">${inputValueTemp}</p>
-                    <div id="toDoListEventContainer">
-                        <ion-icon class="fontSize1dot5 pencil" name="pencil-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 alertIcon" name="alert-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 checkIcon" name="checkmark-outline"></ion-icon>
-                        <ion-icon class="fontSize1dot5 trashIcon" name="trash-outline"></ion-icon>
-                    </div>
-                </div>
-    `;
+        let containerTempb=containerTempFirst+containerTempSecund+inputValueTemp+containerTempThird ;
     containerTemp=containerTempb;
     }
     let containerBodyTemp = containerBodyTemplate+containerTemp;
@@ -240,19 +229,24 @@ function alertAllowed() {
     const alertTag = document.querySelectorAll('.alertIcon');
     const pTextTag = document.querySelectorAll('.text');
     for (let index = 0; index < alertTag.length; index++) {
-        const pTextTagIndex = pTextTag[index]
+        const pTextTagIndex = pTextTag[index];
+        const alertTagIndex= alertTag[index];
         alertTag[index].addEventListener('click', function() {
             if (pTextTagIndex.classList.contains('alert') == false) {
                 if (changeGenderStyleSelector[0].dataset.gender=="man") {
                      pTextTagIndex.classList.add("alert","color3");
+                     alertTagIndex.classList.add("color3");
                 } else {
                     pTextTagIndex.classList.add("alert","color3G");
+                    alertTagIndex.classList.add("color3G");
                 }
             } else {
                 if (pTextTagIndex.classList.contains('color3')) {
                     pTextTagIndex.classList.remove("alert","color3");
+                    alertTagIndex.classList.remove("color3");
                 } else {
                     pTextTagIndex.classList.remove("alert","color3G");
+                    alertTagIndex.classList.remove("color3G");
                 }                
             }
         });
