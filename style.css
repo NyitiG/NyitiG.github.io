@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/* color palette
+d6d9ce-f3dad8-f4c3c2-f1b5cb-e88eed 
+ */
+
+/* full page style */
+.color1 {
+    color: #d6d9ce;
+}
+.color2 {
+    color: #f3dad8;
+}
+.color3 {
+    color: #f4c3c2;
+}
+.color4 {
+    color: #f1b5cb;
+}
+.color5 {
+    color: #e88eed;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hide {
+    display: none;
+}
+#fullContainer {
+    width: 100vw;
+    background-image: linear-gradient(135deg,#d6d9ce,#e88eed);
+    padding-top: 3vh;
+}
+.width360px {
+    width: 360px;
+}
+.marginauto {
+    margin: 0 auto;
+}
+.fontHeader {
+    font-family: 'Vollkorn', serif;
+    line-height: 1.6;
+    background: linear-gradient(90deg,#8C51A5 0%, #CB5E98 100% );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.fontsize1dot2 {
+    font-size: 1.2rem;
+}
+.fontsize1 {
+    font-size: 1rem;
+}
+.fontOther {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+.displayFlexRow {
+    display: flex;
+    flex-direction: row;
+}
+.displayFlexColumn {
+    display: flex;
+    flex-direction: column;
+}
+.justContSpBetw {
+    justify-content: space-between;
+}
+.justContSpEv {
+    justify-content: space-evenly;
+}
+.alignItCent {
+    align-items: center;
+}
+.textAlingCent {
+    text-align: center;
+}
+/* first page style */
+.firstPageContainer {
+    padding: 0 20px;
+    height: 80vh;
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+}
+.fpcH1Cont {
+    margin-top: 20vh;
+    text-align: center;
+}
+.fPCStartCont {
+    margin-top: 15vh;
+    cursor: pointer;
+}
+.fPCStartSpan {
+    padding: 15px;
+    background-color: #8C51A5;
+    border-radius: 10px;
+}
+.h4Bottom {
+    padding: 3px;
+    cursor: pointer;
+}
+#fPCSelectLanguageCont {
+    padding: 3vh 20px 0 20px;
+    height: 17vh;
+    background-color: white;
+}
+.margintop1vh {
+    margin-top: 1vh;
+}
+
+/* secund page style */
+.margintop5vh {
+    margin-top: 5vh;
+}
+.sPCStartCont {
+    margin-top: 10vh;
+}
+.sPCStartContNone {
+    padding: 15px;
+    background-color: #d6d9ce;
+    border-radius: 10px;
+}
+.cursorPointer {
+    cursor: pointer;
+}
+input {
+    text-align: center;
+    border: 1px solid #e88eed;
+    outline: none;
+
+}
+input:focus {
+    border: 3px solid #8C51A5;
+}
+
+/* third page style */
+
+/* fourt page style */
+
+.margintop10vh {
+    margin-top: 10vh;
+}
