@@ -416,7 +416,7 @@ function wingame() {
     return;
 }
 function losegame() {
-    fPCEngH2.innerHTML="Unfortunately, you can't figure out the number!"
+    fPCEngH2.innerHTML="You are unlucky now, but try again."
     emojieng.innerHTML="🙁";
     fPCHunH2.innerHTML="Sajnos nem sikerült!";
     emojihun.innerHTML="🙁";
