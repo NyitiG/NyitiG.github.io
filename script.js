@@ -409,7 +409,7 @@ spanCounter[0].innerHTML=counter;
 spanCounter[1].innerHTML=counter;
 }
 function wingame() {
-    fPCEngH2.innerHTML="Congratulations! You guessed the number!"
+    fPCEngH2.innerHTML="Congratulations! You got it!"
     emojieng.innerHTML="😀";
     fPCHunH2.innerHTML="Gratulálok! Kitaláltad!";
     emojihun.innerHTML="😀";
