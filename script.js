@@ -54,7 +54,7 @@ let playerName ="";
 let nameLenght=false;
 let inputtagindex=0;
 let randomNumberNum =0;
-let counter=8;
+let counter=10;
 let numberOfNumber=0;
 
 // addEventListener
@@ -75,7 +75,7 @@ function changeLangHun() {
             datalangChangeen[i].classList.add("hide");
            datalangChangehu[i].classList.remove("hide");
            if (i>0) {
-            console.log("AZ i értéke: "+i);
+            // console.log("AZ i értéke: "+i);
             inputtagindexCreatHun(i);
         }
          } else {
@@ -92,7 +92,7 @@ function changeLangEn() {
             datalangChangehu[i].classList.add("hide");
             datalangChangeen[i].classList.remove("hide"); 
             if (i>0) {
-                console.log("AZ i értéke: "+i);
+                // console.log("AZ i értéke: "+i);
                 inputtagindexCreatEn(i);
             }
         } else {
@@ -154,7 +154,6 @@ switch (i) {
         inputtagindex=0;
         nextHunSPValid(inputtagindex);
         break;
-
     default:
         break;
 }
@@ -164,8 +163,7 @@ function inputtagindexCreatEn(i) {
         case 1:
             inputtagindex=1;
             nextEnSPValid(inputtagindex);
-            break;
-    
+            break;    
         default:
             break;
     }
@@ -200,13 +198,10 @@ function goThirdPage() {
     spanValid[inputtagindex].classList.remove("fPCStartSpan","color1");
     thirdPageContainer.classList.remove("hide");
     creatPlayerNameTPC();
-    console.log("inputtagindex: "+inputtagindex)
     if (inputtagindex==0) {
         tPCHun.classList.remove("hide");
-        randomNumber();
     } else {
-        tPCEng.classList.remove("hide");
-        
+        tPCEng.classList.remove("hide");      
     }
     hunGamePage();
     engGamePage();
@@ -221,7 +216,8 @@ function creatPlayerNameTPC() {
     return;
 }
 function hunGamePage() {
-     document.querySelector('input[name=numberHun]').focus();
+     randomNumber();
+     inputFocus();
     tPCSpCOnt.addEventListener("click", function () {
          numbercheckHun();
      })
@@ -248,12 +244,11 @@ function hunGamePage() {
 }
 function randomNumber() {
     randomNumberNum=Math.floor(Math.random() * 99);
+    return;
 }
 function numbercheckHun() {
-    console.log("Input value: "+tpCNumInput.value);
+    // console.log("Input value: "+tpCNumInput.value);
     let inputNumber=tpCNumInput.value;
-    
-    console.log("inputNumber: "+inputNumber);
     if (inputNumber==="") {
         tpCNumInput.placeholder="Nem írtál be számot!";
         return;
@@ -268,28 +263,17 @@ function numbercheckHun() {
         tpCNumInput.placeholder="Rossz szám!";
 }
 function gameHun(inputNumber) {
-    console.log(randomNumberNum);
+    // console.log(randomNumberNum);
     counter--;
-    console.log(counter);
+    // console.log(counter);
   if (counter==1) {
-    spanCounter[0].innerHTML="utolsó lehetőség!";
-    if (inputNumber<randomNumberNum) {
-        tpCNumInput.value="";
-        tpCNumInput.placeholder="Sajnos nem talált!";
-        tPCHelpTexth5.innerHTML="Ennél nagyobb számra gondoltam";
-      }
-      if (inputNumber>randomNumberNum) {
-        tpCNumInput.value="";
-        tpCNumInput.placeholder="Sajnos nem talált!";
-        tPCHelpTexth5.innerHTML="Ennél kisebb számra gondoltam";
-      }
+      countEquOne(inputNumber);
       if (inputNumber==randomNumberNum) {
         wingame();
         goFouthPageHun();
       }
       return;
   }; 
-
   if (counter==0) {
     if (inputNumber==randomNumberNum) {
         wingame();
@@ -298,27 +282,21 @@ function gameHun(inputNumber) {
         losegame();
         goFouthPageHun();
     }
-  }
-  
+  }  
 if (inputNumber<randomNumberNum) {
-    tpCNumInput.value="";
-    tpCNumInput.placeholder="Sajnos nem talált!";
-    tPCHelpTexth5.innerHTML="Ennél nagyobb számra gondoltam";
+    biggerNumber();
     }
 if (inputNumber>randomNumberNum) {
-    tpCNumInput.value="";
-    tpCNumInput.placeholder="Sajnos nem talált!";
-    tPCHelpTexth5.innerHTML="Ennél kisebb számra gondoltam";
+    smallerNUmber();
     }
 if (inputNumber==randomNumberNum) {
     wingame();
     goFouthPageHun();
     }    
-spanCounter[0].innerHTML=counter;
-spanCounter[1].innerHTML=counter;
+spanContChange();
 }
 function engGamePage() {
-    document.querySelector('input[name=numberEng]').focus();
+    inputFocus();
     randomNumber();
     tPCEngSpCOnt.addEventListener("click", function () {
         numbercheckEng();
@@ -359,26 +337,16 @@ function numbercheckEng() {
         tpCEngNumInput.placeholder="Bad number!";
 }
 function gameEng(inputNumber) {
-    console.log(randomNumberNum);
+    // console.log(randomNumberNum);
     counter--;
-    console.log(counter);
+    // console.log(counter);
   if (counter==1) {
-    spanCounter[1].innerHTML="last chance!";
-    if (inputNumber<randomNumberNum) {
-        tpCEngNumInput.value="";
-        tpCEngNumInput.placeholder="That's not it!";
-        tPCEngHelpTexth5.innerHTML="I thought of a bigger number!";
-      }
-      if (inputNumber>randomNumberNum) {
-        tpCEngNumInput.value="";
-        tpCEngNumInput.placeholder="That's not it!";
-        tPCEngHelpTexth5.innerHTML="I thought of a smaller number!";
-      }
-      if (inputNumber==randomNumberNum) {
+    countEquOne(inputNumber);
+    if (inputNumber==randomNumberNum) {
         wingame();
          gofouthPageEng();
       }
-      return;
+    return;
   }; 
 
   if (counter==0) {
@@ -392,21 +360,16 @@ function gameEng(inputNumber) {
   }
   
 if (inputNumber<randomNumberNum) {
-    tpCEngNumInput.value="";
-    tpCEngNumInput.placeholder="That's not it!";
-    tPCEngHelpTexth5.innerHTML="I thought of a bigger number!";
+    biggerNumber();
     }
 if (inputNumber>randomNumberNum) {
-    tpCEngNumInput.value="";
-    tpCEngNumInput.placeholder="That's not it!";
-    tPCEngHelpTexth5.innerHTML="I thought of a smaller number!";
+    smallerNUmber();
     }
 if (inputNumber==randomNumberNum) {
         wingame();
         gofouthPageEng();
     }
-spanCounter[0].innerHTML=counter;
-spanCounter[1].innerHTML=counter;
+spanContChange();
 }
 function wingame() {
     fPCEngH2.innerHTML="Congratulations! You got it!"
@@ -422,16 +385,16 @@ function losegame() {
     emojihun.innerHTML="🙁";
     return;
 }
-
 function goFouthPageHun() {
     thirdPageContainer.classList.add('hide');
+    tPCHun.classList.add('hide');
     fourthPageContainer.classList.remove('hide');
     fPCHun.classList.remove('hide');
-    fPCAddEvents();
-   
+    fPCAddEvents();   
 }
 function gofouthPageEng() {
     thirdPageContainer.classList.add('hide');
+    tPCEng.classList.add('hide');
     fourthPageContainer.classList.remove('hide');
     fPCEng.classList.remove('hide');
     fPCAddEvents();
@@ -442,15 +405,11 @@ function fPCAddEvents() {
         return;
     });
     fPCEngTryAg.addEventListener("click", function () {
-        counter=8;
-        spanCounter[0].innerHTML=counter;
-        spanCounter[1].innerHTML=counter;
-        tpCEngNumInput.value="";
-        tpCEngNumInput.placeholder="Enter a number!";
+        counter=10;
+        spanContChange();
+        tPCInputReset();
         randomNumber();
-        thirdPageContainer.classList.remove('hide');
-        fourthPageContainer.classList.add('hide');
-        document.querySelector('input[name=numberEng]').focus();
+        returnTPCEng();
         return;
     })
     fPCNewGame.addEventListener("click", function () {
@@ -468,19 +427,79 @@ function fPCAddEvents() {
         return;
     })
     fPCTryAg.addEventListener("click", function () {
-        counter=8;
-        spanCounter[0].innerHTML=counter;
-        spanCounter[1].innerHTML=counter;
-        tpCNumInput.value="";
-        tpCNumInput.placeholder="Írj be egy számot!";
+        counter=10;
+        spanContChange();
+        tPCInputReset();
         randomNumber();
-        thirdPageContainer.classList.remove('hide');
-        fourthPageContainer.classList.add('hide');
-        document.querySelector('input[name=numberHun]').focus();
+        returnTPCHun();
         return;
     })
 }
-
-// jelenleg azt kell megcsinálni, h ha újrázok, és nyelvet váltok, akkor a végén 
-// a 4. oldalnál mindkét nyelvű page megnyílik
-// a segítség div-et is 0-d le!
+function tPCInputReset() {
+    tpCNumInput.value="";
+    tpCNumInput.placeholder="Írj be egy számot!";
+    tpCEngNumInput.value="";
+    tpCEngNumInput.placeholder="Enter a number!";
+    return;
+}
+function inputFocus() {
+    document.querySelector('input[name=numberHun]').focus();
+    document.querySelector('input[name=numberEng]').focus();
+    return;
+}
+function returnTPCHun() {
+    helpDivErase();
+    thirdPageContainer.classList.remove('hide');
+    tPCHun.classList.remove('hide');
+    fourthPageContainer.classList.add('hide');
+    fPCHun.classList.add('hide');
+    inputFocus();
+    return;
+}
+function returnTPCEng() {
+    helpDivErase();
+    thirdPageContainer.classList.remove('hide');
+    tPCEng.classList.remove('hide');
+    fourthPageContainer.classList.add('hide');
+    fPCEng.classList.add('hide');
+    inputFocus();
+}
+function spanContChange() {
+    spanCounter[0].innerHTML=counter;
+    spanCounter[1].innerHTML=counter;
+    return;
+}
+function countEquOne(inputNumber) {
+    spanCounter[1].innerHTML="last chance!";
+    spanCounter[0].innerHTML="utolsó lehetőség!";
+    if (inputNumber<randomNumberNum) {
+        biggerNumber();
+      }
+      if (inputNumber>randomNumberNum) {
+            smallerNUmber();
+      }
+    return;
+}
+function biggerNumber() {
+    tpCNumInput.value="";
+    tpCNumInput.placeholder="Sajnos nem talált!";
+    tPCHelpTexth5.innerHTML="Ennél nagyobb számra gondoltam";
+    tpCEngNumInput.value="";
+    tpCEngNumInput.placeholder="That's not it!";
+    tPCEngHelpTexth5.innerHTML="I thought of a bigger number!";
+    return;
+}
+function smallerNUmber() {
+    tpCNumInput.value="";
+    tpCNumInput.placeholder="Sajnos nem talált!";
+    tPCHelpTexth5.innerHTML="Ennél kisebb számra gondoltam";
+    tpCEngNumInput.value="";
+    tpCEngNumInput.placeholder="That's not it!";
+    tPCEngHelpTexth5.innerHTML="I thought of a smaller number!";
+    return;
+}
+function helpDivErase() {
+    tPCHelpTexth5.innerHTML="";
+    tPCEngHelpTexth5.innerHTML="";
+    return;
+}
