@@ -372,16 +372,16 @@ if (inputNumber==randomNumberNum) {
 spanContChange();
 }
 function wingame() {
-    fPCEngH2.innerHTML="Congratulations! You got it!"
+    fPCEngH2.innerHTML="Congratulations! You are found the number. Try again!"
     emojieng.innerHTML="😀";
     fPCHunH2.innerHTML="Gratulálok! Kitaláltad!";
     emojihun.innerHTML="😀";
     return;
 }
 function losegame() {
-    fPCEngH2.innerHTML="You are unlucky now, but try again."
+    fPCEngH2.innerHTML="The number was "+randomNumberNum+". Try again."
     emojieng.innerHTML="🙁";
-    fPCHunH2.innerHTML="Sajnos nem sikerült!";
+    fPCHunH2.innerHTML="A szám amire gondoltam: "+randomNumberNum+". Próbáld meg újra!";
     emojihun.innerHTML="🙁";
     return;
 }
@@ -486,7 +486,7 @@ function biggerNumber() {
     tPCHelpTexth5.innerHTML="Ennél nagyobb számra gondoltam";
     tpCEngNumInput.value="";
     tpCEngNumInput.placeholder="That's not it!";
-    tPCEngHelpTexth5.innerHTML="I thought of a bigger number!";
+    tPCEngHelpTexth5.innerHTML="My number is bigger!";
     return;
 }
 function smallerNUmber() {
@@ -495,7 +495,7 @@ function smallerNUmber() {
     tPCHelpTexth5.innerHTML="Ennél kisebb számra gondoltam";
     tpCEngNumInput.value="";
     tpCEngNumInput.placeholder="That's not it!";
-    tPCEngHelpTexth5.innerHTML="I thought of a smaller number!";
+    tPCEngHelpTexth5.innerHTML="My number is smaller!";
     return;
 }
 function helpDivErase() {
